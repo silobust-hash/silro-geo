@@ -5,6 +5,13 @@ import { Badge } from '@/components/ui/badge';
 export default function HomePage() {
   return (
     <div className="bg-gray-50">
+      {/* Notice Banner */}
+      <div className="bg-amber-50 border-b border-amber-200 py-3 px-4 text-center">
+        <p className="text-sm text-amber-800">
+          <span className="font-semibold">현재 사이트 제작 중입니다.</span> 일부 기능이 제한될 수 있으며, 서비스 내용은 변경될 수 있습니다. 문의: <a href="tel:010-9883-7268" className="underline font-semibold">010-9883-7268</a>
+        </p>
+      </div>
+
       {/* Hero */}
       <section className="relative bg-gradient-to-b from-blue-50 to-white py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
