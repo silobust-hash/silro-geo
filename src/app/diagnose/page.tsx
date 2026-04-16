@@ -10,6 +10,8 @@ import type { DiagnosisResult } from '@/lib/types';
 
 export default function DiagnosePage() {
   const [url, setUrl] = useState('');
+  const [company, setCompany] = useState('');
+  const [contact, setContact] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<DiagnosisResult | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -19,6 +21,9 @@ export default function DiagnosePage() {
     setLoading(true);
     setError(null);
     setResult(null);
+
+    // TODO: 실 서버 배포 시 여기에 Email 전송 API나 DB 저장 웹훅(ex: Zapier/Supabase)을 연결합니다.
+    console.log('[Lead Capture]', { company, contact, url });
 
     const res = await diagnoseAction(url);
     if (res.success && res.data) {
@@ -49,21 +54,52 @@ export default function DiagnosePage() {
           </h1>
           <p className="text-gray-600 mb-8">URL을 입력하면 30초 만에 AI 검색 노출 현황을 분석합니다.</p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-            <input
-              type="text"
-              placeholder="https://example.com"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              className="flex-1 px-6 py-4 rounded-full border border-gray-200 text-lg focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-sm"
-              disabled={loading}
-            />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-lg mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 text-left relative z-10">
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1">분석할 사이트 URL <span className="text-red-500">*</span></label>
+              <input
+                type="text"
+                placeholder="https://example.com"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                disabled={loading}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1">사업장명 (선택)</label>
+              <input
+                type="text"
+                placeholder="예: 한동병원"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                disabled={loading}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-1">결과 수신 연락처 <span className="text-red-500">*</span></label>
+              <input
+                type="text"
+                placeholder="휴대폰 번호 또는 이메일"
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                disabled={loading}
+              />
+              <p className="text-xs text-gray-500 mt-2 tracking-tight flex gap-1 items-start">
+                <span className="text-blue-500 font-bold">✓</span> 
+                입력하신 연락처로 우선순위 개선 권고안을 포함한 상세 리포트를 발송해드립니다.
+              </p>
+            </div>
             <button
               type="submit"
-              disabled={loading || !url.trim()}
-              className="px-8 py-4 bg-blue-500 text-white rounded-full text-lg font-semibold hover:bg-blue-600 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-200"
+              disabled={loading || !url.trim() || !contact.trim()}
+              className="mt-2 w-full px-8 py-4 bg-blue-600 text-white rounded-lg text-lg font-bold hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-200"
             >
-              {loading ? '분석 중...' : '진단 시작'}
+              {loading ? 'AI 분석 중...' : '무료 진단 시작'}
             </button>
           </form>
         </div>
