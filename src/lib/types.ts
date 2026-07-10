@@ -93,7 +93,10 @@ export interface ScoreBreakdown {
 
 export type Grade = 'A' | 'B' | 'C' | 'D' | 'F';
 
+export type SuggestedPersona = 'hospital' | 'construction' | 'sme';
+
 export interface DiagnosisResult {
+  id?: string;
   url: string;
   domain: string;
   analyzedAt: string;
@@ -108,4 +111,5 @@ export interface DiagnosisResult {
   indexing: IndexingAnalysis;
   topIssues: string[];
   topRecommendations: string[];
+  suggestedPersona?: SuggestedPersona | null;
 }
