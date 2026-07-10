@@ -23,7 +23,7 @@ async function fetchWithTimeout(url: string, timeout = 10000): Promise<string> {
   }
 }
 
-function analyzeMeta(html: string, url: string): MetaAnalysis {
+function analyzeMeta(html: string): MetaAnalysis {
   const $ = cheerio.load(html);
   const title = $('title').text().trim() || null;
   const description = $('meta[name="description"]').attr('content')?.trim() || null;
@@ -227,7 +227,7 @@ function analyzeContent(html: string): ContentAnalysis {
   };
 }
 
-function analyzeIndexing(domain: string): IndexingAnalysis {
+function analyzeIndexing(): IndexingAnalysis {
   // 실제 구현에서는 Google API를 사용하지만, MVP에서는 간단히 처리
   return {
     estimatedPages: -1, // 알 수 없음
@@ -253,12 +253,12 @@ export async function analyzeUrl(inputUrl: string): Promise<DiagnosisResult> {
   const domain = new URL(url).hostname;
   const html = await fetchWithTimeout(url);
 
-  const meta = analyzeMeta(html, url);
+  const meta = analyzeMeta(html);
   const schema = analyzeSchema(html);
   const semantic = analyzeSemantic(html);
   const security = analyzeSecurity(url);
   const content = analyzeContent(html);
-  const indexing = analyzeIndexing(domain);
+  const indexing = analyzeIndexing();
 
   const scoreBreakdown: ScoreBreakdown = {
     meta: meta.score,
