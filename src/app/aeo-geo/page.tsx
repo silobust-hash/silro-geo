@@ -1,6 +1,24 @@
+import type { Metadata } from 'next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
+
+const PAGE_URL = 'https://xn--hc0b21et01ao2a.com/aeo-geo';
+const PAGE_TITLE = 'AEO·GEO 최적화';
+const PAGE_DESCRIPTION =
+  'ChatGPT·Gemini·Perplexity 등 AI 검색에서 기업이 더 정확히 이해되고 인용되도록 콘텐츠와 구조화 데이터를 진단·개선합니다.';
+
+export const metadata: Metadata = {
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    title: `${PAGE_TITLE} | SilroGEO`,
+    description: PAGE_DESCRIPTION,
+    url: PAGE_URL,
+    type: 'website',
+  },
+};
 
 export default function AeoGeoPage() {
   return (
@@ -11,7 +29,7 @@ export default function AeoGeoPage() {
           <Badge variant="secondary" className="mb-4 text-blue-600 bg-blue-50">AEO/GEO Optimization</Badge>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">AEO·GEO 최적화</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
-            ChatGPT, Gemini, Perplexity에게 물으면<br />AI가 당신의 회사를 1위로 추천하게 만듭니다.
+            ChatGPT, Gemini, Perplexity에게 물었을 때<br />AI가 귀사를 더 자주 추천하도록 콘텐츠와 구조를 다듬습니다.
           </p>
           <Link href="/diagnose" className="bg-blue-500 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 transition shadow-lg shadow-blue-200">
             무료 진단 시작 →
@@ -34,6 +52,23 @@ export default function AeoGeoPage() {
                 GEO(Generative Engine Optimization)는 AI가 콘텐츠를 인용하도록 최적화하는 전략입니다.
                 AI와 코딩을 활용하여 병원 노무관리와 산업안전 시스템을 자동화하는 <strong>코딩하는 노무사 박실로</strong>가 직접 설계하고 실행합니다.
               </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Real Experience */}
+      <section className="px-4 pb-16">
+        <div className="max-w-4xl mx-auto">
+          <Card className="border-0 shadow-sm">
+            <CardContent className="p-8">
+              <Badge variant="secondary" className="mb-4 text-blue-600 bg-blue-50">2026년 4월 1일부터의 기록</Badge>
+              <h2 className="text-xl font-bold mb-4">저도 처음부터 잘한 것은 아닙니다</h2>
+              <div className="space-y-3 text-gray-700 leading-relaxed">
+                <p>2026년 4월 1일부터 직접 부딪히며 배우고, 고치고, 다시 실험했습니다.</p>
+                <p>박실로 노무사는 인공지능을 공부하고, 실무에 적용하고, 답변형 검색과 생성형 검색 최적화에 진심인 사람입니다.</p>
+                <p>그 경험을 바탕으로 귀사의 홈페이지와 콘텐츠가 인공지능 검색에서 어떻게 보일 수 있는지 함께 살펴드리겠습니다.</p>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -73,7 +108,7 @@ export default function AeoGeoPage() {
               { step: '②', title: '전략', desc: '키워드 전략, 90일 로드맵, Schema 설계', icon: '📋' },
               { step: '③', title: '실행', desc: 'Schema 구현, 콘텐츠 제작, 기술 최적화', icon: '⚡' },
               { step: '④', title: '측정', desc: 'AI 답변 점유율(SoV) 추적, 리포트', icon: '📊' },
-              { step: '⑤', title: '개선', desc: '데이터 기반 조정, A/B 테스트', icon: '🔧' },
+              { step: '⑤', title: '개선', desc: '데이터 기반 조정, 비교 실험', icon: '🔧' },
               { step: '⑥', title: '재측정', desc: '개선 효과 확인 → 다시 ④로 (무한 반복)', icon: '🔄' },
             ].map(({ step, title, desc, icon }) => (
               <Card key={step} className="border-0 shadow-sm">

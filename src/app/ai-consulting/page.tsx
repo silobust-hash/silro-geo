@@ -1,6 +1,23 @@
+import type { Metadata } from 'next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
+
+const PAGE_URL = 'https://xn--hc0b21et01ao2a.com/ai-consulting';
+const PAGE_TITLE = 'AI경영진단 컨설팅';
+const PAGE_DESCRIPTION =
+  '광주·전남 기업의 업무 구조를 분석해 AI 자동화 가능 영역을 진단하고, 표준화·도입 설계·구축 전략까지 제안합니다.';
+
+export const metadata: Metadata = {
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    title: `${PAGE_TITLE} | SilroGEO`,
+    description: PAGE_DESCRIPTION,
+    url: PAGE_URL,
+    type: 'website',
+  },
+};
 
 export default function AIConsultingPage() {
   return (
