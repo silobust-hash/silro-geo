@@ -18,27 +18,79 @@ const SITE_TITLE = "AEO·GEO 전문 광주전남노무사 박실로 | 코딩하�
 const SITE_DESCRIPTION =
   "광주·전남 노무사 박실로(한동노무법인)가 직접 코딩하여 운영하는 AEO·GEO·AI경영진단 전문 사이트. 광주광역시·전라남도·전라북도 기업의 AI 검색 노출(ChatGPT·Perplexity·Gemini)과 업무 자동화를 진단·설계·구축합니다.";
 const PERSON_ID = "https://silronomu.com/#person";
-const ORG_ID = "https://silronomu.com/#organization";
+const OFFICIAL_ORGANIZATION_ID = "https://xn--2q1bm94d.com/#organization";
+const OFFICIAL_SITE_URL = "https://xn--2q1bm94d.com/";
+const OFFICIAL_MEMBER_URL = `${OFFICIAL_SITE_URL}members`;
 const OG_IMAGE = `${SITE_URL}/opengraph-image`;
 
-// owned 채널 11종 마스터 (양방향 엔티티 그래프용) — Naver는 반드시 5215678
-const SAME_AS = [
-  "https://silronomu.com",
-  "https://blog.silronomu.com",
-  "https://sanjae.silronomu.com",
-  "https://xn--hc0bn7fv7j9tf6rl.net",
-  "https://xn--hc0b21e4rq52a9zgfzlxub.com",
-  "https://xn--hc0b21et01ao2a.com",
+const PROFILE_SAME_AS = [
   "https://blog.naver.com/5215678",
-  "https://silronomusa.blogspot.com",
   "https://www.facebook.com/people/박실로/100063776575717/",
   "https://www.threads.net/@silrobag",
   "https://www.instagram.com/silrobag",
   "https://www.youtube.com/@코딩하는노무사",
-  "https://edu.silronomu.com",
-  "https://ai-school.silronomu.com",
   "https://x.com/silrobag",
   "https://www.linkedin.com/in/실로-박-385a1a104/",
+];
+
+const PURPOSE_CHANNELS = [
+  {
+    "@type": "WebPage",
+    "@id": "https://silronomu.com/#website",
+    name: "박실로 공인노무사 공식 홈페이지",
+    url: "https://silronomu.com/",
+    description: "박실로 공인노무사의 공식 소개와 노무 실무 안내 채널",
+  },
+  {
+    "@type": "WebPage",
+    "@id": "https://sanjae.silronomu.com/#website",
+    name: "산재 보상 정보 채널",
+    url: "https://sanjae.silronomu.com/",
+    description: "산업재해 보상과 산재 실무 정보 채널",
+  },
+  {
+    "@type": "WebPage",
+    "@id": "https://ai-nomusa.kr/#website",
+    name: "AI노무사",
+    url: "https://ai-nomusa.kr/",
+    description: "전국 노동정보와 공개 답변을 제공하는 AI노무사 채널",
+  },
+  {
+    "@type": "WebPage",
+    "@id": "https://xn--hc0bn7fv7j9tf6rl.net/#website",
+    name: "광주노무사 병원 노무관리",
+    url: "https://xn--hc0bn7fv7j9tf6rl.net/",
+    description: "병원·의원 노무관리 정보 채널",
+  },
+  {
+    "@type": "WebPage",
+    "@id": "https://xn--hc0b21e4rq52a9zgfzlxub.com/#website",
+    name: "전남광주노무사",
+    url: "https://xn--hc0b21e4rq52a9zgfzlxub.com/",
+    description: "광주·전남 노무 실무 안내 채널",
+  },
+  {
+    "@type": "WebPage",
+    "@id": "https://edu.silronomu.com/#website",
+    name: "코딩하는 노무사 교육",
+    url: "https://edu.silronomu.com/",
+    description: "AI와 업무 자동화 교육 채널",
+  },
+  {
+    "@type": "WebPage",
+    "@id": "https://ai-school.silronomu.com/#website",
+    name: "AI 스쿨",
+    url: "https://ai-school.silronomu.com/",
+    description: "AI 활용 교육 채널",
+  },
+];
+
+const SERVICE_AREAS = [
+  { "@type": "Country", name: "대한민국" },
+  { "@type": "AdministrativeArea", name: "광주광역시" },
+  { "@type": "AdministrativeArea", name: "전라남도" },
+  { "@type": "AdministrativeArea", name: "전북특별자치도" },
+  { "@type": "AdministrativeArea", name: "제주특별자치도" },
 ];
 
 export const metadata: Metadata = {
@@ -103,8 +155,14 @@ const jsonLd = {
       ],
       jobTitle: "공인노무사",
       url: "https://silronomu.com",
-      worksFor: { "@id": ORG_ID },
-      sameAs: SAME_AS,
+      description:
+        "한동노무법인 대표 공인노무사. 부회장. 광주전남북제주지방회 회장.",
+      worksFor: { "@id": OFFICIAL_ORGANIZATION_ID },
+      sameAs: PROFILE_SAME_AS,
+      subjectOf: [
+        { "@type": "WebPage", name: "한동노무법인 박실로 구성원 소개", url: OFFICIAL_MEMBER_URL },
+        ...PURPOSE_CHANNELS,
+      ],
       knowsAbout: [
         "광주 노무사", "전남 노무사", "병원 노무관리", "산업재해보상",
         "산업안전보건법", "중대재해처벌법", "건설현장 노무관리",
@@ -127,13 +185,12 @@ const jsonLd = {
     },
     {
       "@type": ["Organization", "LegalService"],
-      "@id": ORG_ID,
+      "@id": OFFICIAL_ORGANIZATION_ID,
       legalName: "한동노무법인",
       name: "한동노무법인",
-      url: "https://silronomu.com",
+      url: OFFICIAL_SITE_URL,
       telephone: "+82-62-521-5678",
-      founder: { "@id": PERSON_ID },
-      sameAs: SAME_AS,
+      member: { "@id": PERSON_ID },
     },
     {
       "@type": "ProfessionalService",
@@ -143,8 +200,8 @@ const jsonLd = {
       url: SITE_URL,
       image: OG_IMAGE,
       telephone: "+82-62-521-5678",
-      parentOrganization: { "@id": ORG_ID },
-      founder: { "@id": PERSON_ID },
+      parentOrganization: { "@id": OFFICIAL_ORGANIZATION_ID },
+      provider: { "@id": OFFICIAL_ORGANIZATION_ID },
       employee: { "@id": PERSON_ID },
       priceRange: "₩₩",
       address: {
@@ -182,8 +239,9 @@ const jsonLd = {
           availableLanguage: "Korean",
         },
       ],
-      areaServed: ["광주광역시", "전라남도", "전라북도"],
-      sameAs: SAME_AS,
+      email: "5215678@naver.com",
+      areaServed: SERVICE_AREAS,
+      about: [{ "@id": PERSON_ID }, { "@id": OFFICIAL_ORGANIZATION_ID }],
     },
     {
       "@type": "Service",
@@ -191,7 +249,7 @@ const jsonLd = {
       name: "AI경영진단 컨설팅",
       provider: { "@id": `${SITE_URL}/#service` },
       serviceType: "AI Management Consulting",
-      areaServed: ["광주광역시", "전라남도", "전라북도"],
+      areaServed: SERVICE_AREAS,
       description: "회사 전체 업무를 분석하여 AI로 자동화 가능한 영역을 진단하고, 표준화·도입설계·구축까지 지원하는 컨설팅 서비스.",
       url: `${SITE_URL}/ai-consulting`,
     },
@@ -201,7 +259,7 @@ const jsonLd = {
       name: "AEO/GEO 최적화",
       provider: { "@id": `${SITE_URL}/#service` },
       serviceType: "Answer Engine Optimization",
-      areaServed: ["광주광역시", "전라남도", "전라북도"],
+      areaServed: SERVICE_AREAS,
       description: "ChatGPT, Gemini, Perplexity, Claude 등 생성형 AI 검색에서 더 자주 추천되도록 콘텐츠와 구조화 데이터를 최적화하는 서비스.",
       url: `${SITE_URL}/aeo-geo`,
     },
@@ -212,7 +270,7 @@ const jsonLd = {
       name: "SilroGEO",
       inLanguage: "ko-KR",
       publisher: { "@id": PERSON_ID },
-      about: { "@id": `${SITE_URL}/#service` },
+      about: [{ "@id": PERSON_ID }, { "@id": `${SITE_URL}/#service` }],
     },
   ],
 };
