@@ -185,7 +185,7 @@ export default function AeoGeoPage() {
           <div className="flex flex-col gap-3">
             <Link href="/diagnose" className="bg-blue-500 text-white py-4 rounded-full font-semibold hover:bg-blue-600 transition text-lg shadow-lg shadow-blue-200">무료 진단 시작 →</Link>
             <a href="https://open.kakao.com/o/gjLDUN4h" target="_blank" className="bg-yellow-400 text-gray-900 py-4 rounded-full font-semibold hover:bg-yellow-300 transition">💬 카카오톡 상담</a>
-            <a href="tel:010-9883-7268" className="border border-gray-200 py-4 rounded-full font-semibold text-gray-700 hover:bg-gray-50 transition">📞 010-9883-7268</a>
+            <a href="tel:062-521-5678" className="border border-gray-200 py-4 rounded-full font-semibold text-gray-700 hover:bg-gray-50 transition">📞 062-521-5678</a>
           </div>
           <p className="text-sm text-gray-400 mt-6">한동노무법인 | 대표 공인노무사 박실로</p>
         </div>

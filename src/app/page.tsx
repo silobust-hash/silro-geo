@@ -330,7 +330,7 @@ export default function HomePage() {
               <p className="text-gray-500 mb-8">편하게 연락 주세요.</p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center justify-center gap-3 p-4 bg-gray-50 rounded-xl">
-                  <span>📞</span><span className="font-medium">062-521-5678 / 010-9883-7268</span>
+                  <span>📞</span><span className="font-medium">062-521-5678</span>
                 </div>
                 <div className="flex items-center justify-center gap-3 p-4 bg-gray-50 rounded-xl">
                   <span>📧</span><span className="font-medium">5215678@naver.com</span>

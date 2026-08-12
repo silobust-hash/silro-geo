@@ -26,10 +26,9 @@ const OG_IMAGE = `${SITE_URL}/opengraph-image`;
 const PROFILE_SAME_AS = [
   "https://blog.naver.com/5215678",
   "https://www.facebook.com/people/박실로/100063776575717/",
-  "https://www.threads.net/@silrobag",
+  "https://www.threads.com/@silrobag",
   "https://www.instagram.com/silrobag",
   "https://www.youtube.com/@코딩하는노무사",
-  "https://x.com/silrobag",
   "https://www.linkedin.com/in/실로-박-385a1a104/",
 ];
 

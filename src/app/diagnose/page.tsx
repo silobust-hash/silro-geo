@@ -192,7 +192,7 @@ export default function DiagnosePage() {
                 <a href="https://open.kakao.com/o/gjLDUN4h" target="_blank" className="bg-yellow-400 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">
                   💬 카카오톡 상담
                 </a>
-                <a href="tel:010-9883-7268" className="bg-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition">
+                <a href="tel:062-521-5678" className="bg-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition">
                   📞 전화 상담
                 </a>
               </div>

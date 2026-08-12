@@ -112,7 +112,7 @@ export default async function PersonaPage({
               무료 AI 진단 시작
             </Link>
             <a
-              href="tel:010-9883-7268"
+              href="tel:062-521-5678"
               className="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-gray-300 transition"
             >
               상담 문의
@@ -245,10 +245,10 @@ export default async function PersonaPage({
                   💬 카카오톡 상담
                 </a>
                 <a
-                  href="tel:010-9883-7268"
+                  href="tel:062-521-5678"
                   className={`${c.accent} ${c.accentHover} text-white py-4 rounded-full font-semibold transition`}
                 >
-                  📞 010-9883-7268
+                  📞 062-521-5678
                 </a>
                 <Link
                   href="/diagnose"
