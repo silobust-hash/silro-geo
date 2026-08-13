@@ -353,7 +353,7 @@ export default function HomePage() {
         <p className="mb-1">한동노무법인 | 대표 공인노무사 박실로</p>
         <p className="mb-3">
           <a href="https://silronomu.com" className="hover:text-blue-500">silronomu.com</a>{' · '}
-          <a href="https://www.threads.net/@silrobag" className="hover:text-blue-500">@silrobag</a>
+          <a href="https://www.threads.com/@silrobag" className="hover:text-blue-500">@silrobag</a>
         </p>
         <p className="mb-3">
           <Link href="/privacy" className="hover:text-blue-500">개인정보처리방침</Link>{' · '}
