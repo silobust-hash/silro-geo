@@ -18,6 +18,7 @@ export function Nav() {
           <Link href="/ai-consulting" className="text-sm text-gray-600 hover:text-blue-600 transition">AI경영진단</Link>
           <Link href="/aeo-geo" className="text-sm text-gray-600 hover:text-blue-600 transition">AEO/GEO</Link>
           <Link href="/diagnose" className="text-sm text-gray-600 hover:text-blue-600 transition">무료 진단</Link>
+          <a href="https://safety.silronomu.com/" className="text-sm text-gray-600 hover:text-blue-600 transition">산업안전·중대재해</a>
           <a href="tel:062-521-5678" className="text-sm bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition">상담 문의</a>
         </div>
 
@@ -33,6 +34,7 @@ export function Nav() {
           <Link href="/ai-consulting" className="block py-3 text-gray-700" onClick={() => setOpen(false)}>AI경영진단</Link>
           <Link href="/aeo-geo" className="block py-3 text-gray-700" onClick={() => setOpen(false)}>AEO/GEO</Link>
           <Link href="/diagnose" className="block py-3 text-gray-700" onClick={() => setOpen(false)}>무료 진단</Link>
+          <a href="https://safety.silronomu.com/" className="block py-3 text-gray-700" onClick={() => setOpen(false)}>산업안전·중대재해</a>
           <a href="tel:062-521-5678" className="block py-3 text-blue-600 font-semibold">상담 문의</a>
         </div>
       )}

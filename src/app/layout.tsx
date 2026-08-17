@@ -49,6 +49,13 @@ const PURPOSE_CHANNELS = [
   },
   {
     "@type": "WebPage",
+    "@id": "https://safety.silronomu.com/#website",
+    name: "산업안전·중대재해 안내 채널",
+    url: "https://safety.silronomu.com/",
+    description: "산업안전보건과 중대재해 대응 정보를 안내하는 전문 채널",
+  },
+  {
+    "@type": "WebPage",
     "@id": "https://ai-nomusa.kr/#website",
     name: "AI노무사",
     url: "https://ai-nomusa.kr/",
