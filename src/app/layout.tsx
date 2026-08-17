@@ -48,7 +48,7 @@ const PURPOSE_CHANNELS = [
     description: "산업재해 보상과 산재 실무 정보 채널",
   },
   {
-    "@type": "WebPage",
+    "@type": "WebSite",
     "@id": "https://safety.silronomu.com/#website",
     name: "산업안전·중대재해 안내 채널",
     url: "https://safety.silronomu.com/",
