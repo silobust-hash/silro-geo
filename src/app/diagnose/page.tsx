@@ -7,6 +7,7 @@ import { ScoreCard } from '@/components/score-card';
 import { ScoreBreakdown } from '@/components/score-breakdown';
 import { diagnoseAction } from './actions';
 import type { DiagnosisResult } from '@/lib/types';
+import GrowthPath from '@/components/growth-path';
 
 export default function DiagnosePage() {
   const [url, setUrl] = useState('');
@@ -182,6 +183,8 @@ export default function DiagnosePage() {
               </CardContent>
             </Card>
           )}
+
+          <GrowthPath compact />
 
           {/* CTA */}
           <Card className="bg-blue-50 border-blue-200">

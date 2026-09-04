@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ConsultationForm } from '@/components/consultation-form';
+import GrowthPath from '@/components/growth-path';
 
 const SITE_URL = 'https://xn--hc0b21et01ao2a.com';
 const SITE_TITLE = 'AEO·GEO 전문 광주전남노무사 박실로 | 코딩하는 노무사';
@@ -148,6 +149,12 @@ export default function HomePage() {
               </Card>
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <GrowthPath />
         </div>
       </section>
 
