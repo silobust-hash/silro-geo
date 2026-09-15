@@ -136,25 +136,26 @@ export default function AIConsultingPage() {
         </div>
       </section>
 
-      {/* Before/After */}
+      {/* Support scope */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10">기대효과 (Before → After)</h2>
+          <h2 className="text-2xl font-bold text-center mb-2">업무별 지원 범위</h2>
+          <p className="text-center text-xs text-gray-400 mb-10">업무에 맞춰 적용 범위를 정합니다. 절감 시간은 업무 건수·난이도·검수 시간을 맞춰 비교해야 하며, 특정 절감률을 보장하지 않습니다.</p>
           <div className="overflow-x-auto">
             <table className="w-full bg-white rounded-xl shadow-sm overflow-hidden">
               <thead><tr className="bg-purple-50">
                 <th className="p-4 text-left text-sm font-semibold">항목</th>
-                <th className="p-4 text-left text-sm font-semibold">Before</th>
-                <th className="p-4 text-left text-sm font-semibold">After</th>
-                <th className="p-4 text-left text-sm font-semibold">효과</th>
+                <th className="p-4 text-left text-sm font-semibold">검토 대상</th>
+                <th className="p-4 text-left text-sm font-semibold">지원 방식</th>
+                <th className="p-4 text-left text-sm font-semibold">확인 기준</th>
               </tr></thead>
               <tbody>
                 {[
-                  ['반복 문서작성', '평균 3시간/건', '30분 이내', '약 80% 절감'],
-                  ['급여자료 정리', '2일 소요', '3시간 이내', '약 80% 절감'],
-                  ['대표 보고자료', '수기 작성', '자동 요약', '약 70% 단축'],
-                  ['리스크 점검', '월 1회 수동', '상시 자동', '3배 이상 향상'],
-                  ['제안서·견적서', '반나절 소요', '1시간 이내', '약 75% 절감'],
+                  ['반복 문서작성', '작성·검수 과정', '초안 작성 보조', '검수 포함 소요시간'],
+                  ['급여자료 정리', '자료 형식·누락 항목', '분류·대조 보조', '정리시간·오류 건수'],
+                  ['대표 보고자료', '원자료·보고 목적', '요약 초안 보조', '정확성·수정시간'],
+                  ['리스크 점검', '점검 항목·주기', '확인 목록·알림 설계', '누락 여부·검토 기록'],
+                  ['제안서·견적서', '요청 조건·산정 근거', '서식·초안 작성 보조', '계산 검산·검수시간'],
                 ].map(([item, before, after, effect]) => (
                   <tr key={item} className="border-b border-gray-50">
                     <td className="p-4 font-medium text-sm">{item}</td>
