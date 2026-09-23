@@ -1,62 +1,61 @@
 import type { MetadataRoute } from 'next';
-
 const PRIMARY_SITE_URL = 'https://xn--hc0b21et01ao2a.com';
+const LAST_MODIFIED = new Date('2026-07-31T00:00:00.000Z');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = PRIMARY_SITE_URL;
-  const lastModified = new Date();
   return [
     {
       url: siteUrl,
-      lastModified,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${siteUrl}/ai-consulting`,
-      lastModified,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${siteUrl}/aeo-geo`,
-      lastModified,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${siteUrl}/diagnose`,
-      lastModified,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${siteUrl}/for/hospital`,
-      lastModified,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
       url: `${siteUrl}/for/construction`,
-      lastModified,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
       url: `${siteUrl}/for/sme`,
-      lastModified,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
       url: `${siteUrl}/privacy`,
-      lastModified,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${siteUrl}/terms`,
-      lastModified,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
