@@ -3,12 +3,11 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ConsultationForm } from '@/components/consultation-form';
-import GrowthPath from '@/components/growth-path';
 
 const SITE_URL = 'https://xn--hc0b21et01ao2a.com';
-const SITE_TITLE = 'AEO·GEO 전문 광주전남노무사 박실로 | 코딩하는 노무사';
+const SITE_TITLE = 'SilroGEO | 박실로 노무사의 AI 검색노출·업무화';
 const SITE_DESCRIPTION =
-  '광주·전남 노무사 박실로(한동노무법인)가 직접 코딩하여 운영하는 AEO·GEO·AI경영진단 전문 사이트. 광주광역시·전라남도·전라북도 기업의 AI 검색 노출과 업무 자동화를 진단·설계·구축합니다.';
+  '박실로 공인노무사가 운영하는 AEO·GEO·AI경영진단 전문 사이트. 전국 기업을 대상으로 AI 검색 노출과 업무 자동화를 진단·설계·구축하며, 광주·전남·전북·제주 지역의 실무 맥락을 함께 다룹니다.';
 
 export const metadata: Metadata = {
   title: { absolute: SITE_TITLE },
@@ -55,6 +54,33 @@ export default function HomePage() {
             </Link>
             <a href="https://silronomu.com" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-200 bg-white text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-blue-300 hover:text-blue-600 transition">
               박실로 노무사 소개
+            </a>
+            <a href="https://xn--2q1bm94d.com" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-200 bg-white text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-blue-300 hover:text-blue-600 transition">
+              한동.com 공식 홈페이지
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Nationwide labor information */}
+      <section className="border-y border-blue-100 bg-blue-50/60 px-4 py-12">
+        <div className="mx-auto max-w-4xl rounded-2xl bg-white p-7 shadow-sm sm:p-9">
+          <Badge variant="secondary" className="mb-4 bg-blue-50 text-blue-600">전국 노동정보</Badge>
+          <h2 className="text-2xl font-bold text-gray-900">박실로 공인노무사가 검수하는 AI노무사</h2>
+          <p className="mt-4 leading-relaxed text-gray-600">
+            AI노무사는 한동노무법인이 운영하고 박실로 공인노무사가 공개 답변을 검수하는 전국 노동정보 브랜드입니다.
+            산재보상, 중대재해 대응, 직장 내 괴롭힘 등 현장 질문을 공식 근거와 함께 정리합니다. 개별 사건의 판단과
+            수임 여부는 사실관계와 위임 범위를 확인한 공인노무사가 별도로 결정합니다.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="https://ai-nomusa.kr/" className="rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
+              AI노무사 공식 사이트
+            </a>
+            <a href="https://ai-nomusa.kr/answers/ai-nomusa-role/" className="rounded-full border border-blue-200 px-5 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-50">
+              AI노무사의 역할과 한계
+            </a>
+            <a href="https://ai-nomusa.kr/guides/" className="rounded-full border border-blue-200 px-5 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-50">
+              전국 노무사 선택 가이드
             </a>
           </div>
         </div>
@@ -149,12 +175,6 @@ export default function HomePage() {
               </Card>
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <GrowthPath />
         </div>
       </section>
 
@@ -337,7 +357,7 @@ export default function HomePage() {
               <p className="text-gray-500 mb-8">편하게 연락 주세요.</p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center justify-center gap-3 p-4 bg-gray-50 rounded-xl">
-                  <span>📞</span><span className="font-medium">062-521-5678</span>
+                  <span>📞</span><a href="tel:062-521-5678" className="font-medium hover:text-blue-600">062-521-5678</a>
                 </div>
                 <div className="flex items-center justify-center gap-3 p-4 bg-gray-50 rounded-xl">
                   <span>📧</span><span className="font-medium">5215678@naver.com</span>
@@ -347,7 +367,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex flex-col gap-3">
-                <a href="https://open.kakao.com/o/gjLDUN4h" target="_blank" className="bg-yellow-400 text-gray-900 py-4 rounded-full font-semibold hover:bg-yellow-300 transition">💬 카카오톡 상담</a>
+                <a href="https://pf.kakao.com/_VNJxlb/chat" target="_blank" className="bg-yellow-400 text-gray-900 py-4 rounded-full font-semibold hover:bg-yellow-300 transition">💬 카카오톡 상담</a>
                 <a href="mailto:5215678@naver.com" className="border border-gray-200 py-4 rounded-full font-semibold text-gray-700 hover:bg-gray-50 transition">📧 이메일 보내기</a>
               </div>
             </CardContent>
@@ -355,12 +375,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-t border-blue-100 bg-white px-4 py-12"><div className="mx-auto max-w-4xl"><p className="text-sm font-semibold text-blue-600">기업자문 인사이트</p><h2 className="mt-3 text-xl font-bold text-gray-900"><a href="/notes/corporate-advisory-20261009.html" className="underline underline-offset-4 hover:text-blue-600">검색되는 전문성은 실제 자문업무와 연결돼야 합니다</a></h2><p className="mt-3 leading-relaxed text-gray-600">“기업자문 노무사”라는 검색어로 기업 담당자가 찾아왔다면, 그다음에는 어떤 업무를 지원하고 무엇을 준비해야 하는지 명확하게 안내해야 합니다.</p></div></section>
+
       {/* Footer */}
       <footer className="py-10 px-4 border-t text-center text-sm text-gray-400">
         <p className="mb-1">한동노무법인 | 대표 공인노무사 박실로</p>
         <p className="mb-3">
-          <a href="https://silronomu.com" className="hover:text-blue-500">silronomu.com</a>{' · '}
-          <a href="https://www.threads.com/@silrobag" className="hover:text-blue-500">@silrobag</a>
+          <a href="https://silronomu.com" className="hover:text-blue-500">박실로 노무사 개인 홈페이지</a>{' · '}
+          <a href="https://xn--2q1bm94d.com" className="hover:text-blue-500">한동.com 공식 홈페이지</a>{' · '}
+          <a href="https://xn--2q1bm94d.com/members" className="hover:text-blue-500">박실로 구성원 소개</a>{' · '}
+          <a href="https://www.threads.net/@silrobag" className="hover:text-blue-500">@silrobag</a>{' · '}
+          <a href="https://silropanda.com/" className="hover:text-blue-500">실로판다 전문서비스몰</a>
         </p>
         <p className="mb-3">
           <Link href="/privacy" className="hover:text-blue-500">개인정보처리방침</Link>{' · '}

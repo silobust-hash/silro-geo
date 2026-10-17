@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
+import { KakaoConsultButton } from '@/components/kakao-consult-button';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 const SITE_URL = "https://xn--hc0b21et01ao2a.com";
-const SITE_TITLE = "AEO·GEO 전문 광주전남노무사 박실로 | 코딩하는 노무사";
+const SITE_TITLE = "SilroGEO | 박실로 노무사의 AI 검색노출·업무화";
 const SITE_DESCRIPTION =
-  "광주·전남 노무사 박실로(한동노무법인)가 직접 코딩하여 운영하는 AEO·GEO·AI경영진단 전문 사이트. 광주광역시·전라남도·전라북도 기업의 AI 검색 노출(ChatGPT·Perplexity·Gemini)과 업무 자동화를 진단·설계·구축합니다.";
+  "박실로 공인노무사가 운영하는 AEO·GEO·AI경영진단 전문 사이트. 전국 기업을 대상으로 AI 검색 노출(ChatGPT·Perplexity·Gemini)과 업무 자동화를 진단·설계·구축하며, 광주·전남·전북·제주 지역의 실무 맥락을 함께 다룹니다.";
 const PERSON_ID = "https://silronomu.com/#person";
 const OFFICIAL_ORGANIZATION_ID = "https://xn--2q1bm94d.com/#organization";
 const OFFICIAL_SITE_URL = "https://xn--2q1bm94d.com/";
@@ -26,7 +27,7 @@ const OG_IMAGE = `${SITE_URL}/opengraph-image`;
 const PROFILE_SAME_AS = [
   "https://blog.naver.com/5215678",
   "https://www.facebook.com/people/박실로/100063776575717/",
-  "https://www.threads.com/@silrobag",
+  "https://www.threads.net/@silrobag",
   "https://www.instagram.com/silrobag",
   "https://www.youtube.com/@코딩하는노무사",
   "https://www.linkedin.com/in/실로-박-385a1a104/",
@@ -35,10 +36,10 @@ const PROFILE_SAME_AS = [
 const PURPOSE_CHANNELS = [
   {
     "@type": "WebPage",
-    "@id": "https://silronomu.com/#website",
-    name: "박실로 공인노무사 공식 홈페이지",
-    url: "https://silronomu.com/",
-    description: "박실로 공인노무사의 공식 소개와 노무 실무 안내 채널",
+    "@id": "https://blog.silronomu.com/#website",
+    name: "박실로 노무 블로그",
+    url: "https://blog.silronomu.com/",
+    description: "박실로 공인노무사의 노무 실무 해설 채널",
   },
   {
     "@type": "WebPage",
@@ -82,12 +83,18 @@ const PURPOSE_CHANNELS = [
     url: "https://ai-school.silronomu.com/",
     description: "AI 활용 교육 채널",
   },
+  {
+    "@type": "WebPage",
+    "@id": "https://silropanda.com/#website",
+    name: "실로판다 전문서비스몰",
+    url: "https://silropanda.com/",
+    description: "박실로 공인노무사의 시간·판단·강의를 의뢰하는 전문서비스몰",
+  },
 ];
 
 const SERVICE_AREAS = [
   { "@type": "Country", name: "대한민국" },
-  { "@type": "AdministrativeArea", name: "광주광역시" },
-  { "@type": "AdministrativeArea", name: "전라남도" },
+  { "@type": "AdministrativeArea", name: "전남광주통합특별시", alternateName: ["광주광역시", "전라남도"] },
   { "@type": "AdministrativeArea", name: "전북특별자치도" },
   { "@type": "AdministrativeArea", name: "제주특별자치도" },
 ];
@@ -155,7 +162,7 @@ const jsonLd = {
       jobTitle: "공인노무사",
       url: "https://silronomu.com",
       description:
-        "한동노무법인 대표 공인노무사. 부회장. 광주전남북제주지방회 회장.",
+        "한동노무법인 대표 공인노무사. 부회장 및 광주전남북제주지방회 회장.",
       worksFor: { "@id": OFFICIAL_ORGANIZATION_ID },
       sameAs: PROFILE_SAME_AS,
       subjectOf: [
@@ -202,38 +209,19 @@ const jsonLd = {
       parentOrganization: { "@id": OFFICIAL_ORGANIZATION_ID },
       provider: { "@id": OFFICIAL_ORGANIZATION_ID },
       employee: { "@id": PERSON_ID },
-      priceRange: "₩₩",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "금재로 27, 3층",
+        streetAddress: "금재로 27, 3층 (유동, 한동빌딩)",
         addressLocality: "북구",
-        addressRegion: "광주광역시",
+        addressRegion: "전남광주통합특별시",
         postalCode: "61239",
         addressCountry: "KR",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 35.1741,
-        longitude: 126.9123,
-      },
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
       },
       contactPoint: [
         {
           "@type": "ContactPoint",
           telephone: "+82-62-521-5678",
           contactType: "customer service",
-          areaServed: "KR",
-          availableLanguage: "Korean",
-        },
-        {
-          "@type": "ContactPoint",
-          telephone: "+82-10-9883-7268",
-          contactType: "sales",
           areaServed: "KR",
           availableLanguage: "Korean",
         },
@@ -267,6 +255,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "SilroGEO",
+      alternateName: ["실로 검색노출", "실로GEO"],
       inLanguage: "ko-KR",
       publisher: { "@id": PERSON_ID },
       about: [{ "@id": PERSON_ID }, { "@id": `${SITE_URL}/#service` }],
@@ -284,13 +273,20 @@ export default function RootLayout({
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <meta
+          name="naver-site-verification"
+          content="bdac910d69b43c86080f76ec632189c4b0c13d90"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
         <Nav />
         <main className="flex-1 pt-16">{children}</main>
+        <KakaoConsultButton />
       </body>
     </html>
   );

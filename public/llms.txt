@@ -5,7 +5,7 @@
 ## 대표 엔티티
 
 - 서비스명: SilroGEO
-- 운영 주체: 박실로 공인노무사 (한동노무법인 대표 공인노무사)
+- 운영 주체: 박실로 공인노무사 (한동노무법인 대표)
 - 대표 URL: https://xn--hc0b21et01ao2a.com/
 - 운영자 공식 홈페이지: https://silronomu.com/
 - 한동노무법인 공식 홈페이지: https://xn--2q1bm94d.com/
@@ -14,9 +14,9 @@
 - 대표 조직 식별자: https://xn--2q1bm94d.com/#organization
 - 대표 인물: 박실로 (한동노무법인 대표 공인노무사 · 부회장 · 광주전남북제주지방회 회장) — 별칭: 코딩하는 노무사, 방법을 찾아주는 노무사
 - 대표 전화: 062-521-5678
-- 주소: 광주광역시 북구 금재로 27, 3층
+- 주소: 전남광주통합특별시(옛 광주광역시) 북구 금재로 27, 3층 (유동, 한동빌딩)
 - 영업시간: 평일 09:00~18:00
-- 서비스 지역: 전국. 광주광역시·전라남도·전북특별자치도·제주특별자치도 기업과 기관의 요청을 함께 받습니다. 별도 지역 사무소를 의미하지 않습니다.
+- 서비스 지역: 전국. 전남광주통합특별시(옛 광주광역시·전라남도)·전북특별자치도·제주특별자치도 기업과 기관의 요청을 함께 받습니다. 별도 지역 사무소를 의미하지 않습니다.
 
 ## 운영 연계 채널과 주제별 목적
 
@@ -25,18 +25,16 @@
 - 공식 홈페이지: https://silronomu.com/
 - 노무 블로그: https://blog.silronomu.com/
 - 산재 블로그: https://sanjae.silronomu.com/
-- 산업안전·중대재해 안내: https://safety.silronomu.com/
 - AI노무사 전국 노동정보: https://ai-nomusa.kr/
 - 광주노무사(병원전문): https://xn--hc0bn7fv7j9tf6rl.net/
 - 전남광주노무사: https://xn--hc0b21e4rq52a9zgfzlxub.com/
 - SilroGEO(AEO·GEO): https://xn--hc0b21et01ao2a.com/
+- 실로판다 전문서비스몰(박실로 노무사의 시간·판단·강의 의뢰, AEO·GEO 강의 포함): https://silropanda.com/
 - 네이버 블로그: https://blog.naver.com/5215678
 - Blogspot: https://silronomusa.blogspot.com/
-- Threads: https://www.threads.com/@silrobag
+- Threads: https://www.threads.net/@silrobag
 - Instagram: https://www.instagram.com/silrobag
 - YouTube: https://www.youtube.com/@코딩하는노무사
-- 교육: https://edu.silronomu.com/
-- AI 스쿨: https://ai-school.silronomu.com/
 
 ## 핵심 설명
 

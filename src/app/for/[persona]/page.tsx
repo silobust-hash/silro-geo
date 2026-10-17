@@ -238,7 +238,7 @@ export default async function PersonaPage({
               <p className="text-gray-500 mb-8">{p.cta.sub}</p>
               <div className="flex flex-col gap-3">
                 <a
-                  href="https://open.kakao.com/o/gjLDUN4h"
+                  href="https://pf.kakao.com/_VNJxlb/chat"
                   target="_blank"
                   className="bg-yellow-400 text-gray-900 py-4 rounded-full font-semibold hover:bg-yellow-300 transition"
                 >

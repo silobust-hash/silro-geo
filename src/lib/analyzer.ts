@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import { detectPersona } from './persona-detector';
 import type {
   DiagnosisResult, MetaAnalysis, SchemaAnalysis, SchemaItem,
   SemanticAnalysis, SecurityAnalysis, ContentAnalysis, IndexingAnalysis,
@@ -23,7 +24,7 @@ async function fetchWithTimeout(url: string, timeout = 10000): Promise<string> {
   }
 }
 
-function analyzeMeta(html: string): MetaAnalysis {
+function analyzeMeta(html: string, url: string): MetaAnalysis {
   const $ = cheerio.load(html);
   const title = $('title').text().trim() || null;
   const description = $('meta[name="description"]').attr('content')?.trim() || null;
@@ -227,7 +228,7 @@ function analyzeContent(html: string): ContentAnalysis {
   };
 }
 
-function analyzeIndexing(): IndexingAnalysis {
+function analyzeIndexing(domain: string): IndexingAnalysis {
   // 실제 구현에서는 Google API를 사용하지만, MVP에서는 간단히 처리
   return {
     estimatedPages: -1, // 알 수 없음
@@ -253,12 +254,23 @@ export async function analyzeUrl(inputUrl: string): Promise<DiagnosisResult> {
   const domain = new URL(url).hostname;
   const html = await fetchWithTimeout(url);
 
-  const meta = analyzeMeta(html);
+  const meta = analyzeMeta(html, url);
   const schema = analyzeSchema(html);
   const semantic = analyzeSemantic(html);
   const security = analyzeSecurity(url);
   const content = analyzeContent(html);
-  const indexing = analyzeIndexing();
+  const indexing = analyzeIndexing(domain);
+
+  // 페르소나 자동 추론
+  const $body = cheerio.load(html);
+  const bodySnippet = $body('body').text().replace(/\s+/g, ' ').slice(0, 3000);
+  const detection = detectPersona({
+    url,
+    domain,
+    title: meta.title,
+    h1Texts: semantic.h1Text,
+    bodySnippet,
+  });
 
   const scoreBreakdown: ScoreBreakdown = {
     meta: meta.score,
@@ -292,5 +304,6 @@ export async function analyzeUrl(inputUrl: string): Promise<DiagnosisResult> {
     meta, schema, semantic, security, content, indexing,
     topIssues: allIssues.slice(0, 10),
     topRecommendations: recommendations.slice(0, 7),
+    suggestedPersona: detection?.persona ?? null,
   };
 }

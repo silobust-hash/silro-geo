@@ -101,7 +101,7 @@ export default function TermsPage() {
 
         <div className="mt-10 pt-6 border-t text-sm text-gray-500">
           <p>한동노무법인 | 대표 공인노무사 박실로</p>
-          <p>광주광역시 | 062-521-5678 | 5215678@naver.com</p>
+          <p>전남광주통합특별시(옛 광주광역시) | 062-521-5678 | 5215678@naver.com</p>
         </div>
       </article>
     </div>

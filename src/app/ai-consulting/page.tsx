@@ -199,7 +199,7 @@ export default function AIConsultingPage() {
               <h2 className="text-2xl font-bold mb-2">무료 사전 상담</h2>
               <p className="text-gray-500 mb-6">회사 현황을 간단히 듣고, 적합한 패키지를 안내드립니다.</p>
               <div className="flex flex-col gap-3">
-                <a href="https://open.kakao.com/o/gjLDUN4h" target="_blank" className="bg-yellow-400 text-gray-900 py-4 rounded-full font-semibold hover:bg-yellow-300 transition">💬 카카오톡 상담</a>
+                <a href="https://pf.kakao.com/_VNJxlb/chat" target="_blank" className="bg-yellow-400 text-gray-900 py-4 rounded-full font-semibold hover:bg-yellow-300 transition">💬 카카오톡 상담</a>
                 <a href="tel:062-521-5678" className="bg-purple-500 text-white py-4 rounded-full font-semibold hover:bg-purple-600 transition">📞 062-521-5678</a>
               </div>
               <p className="text-sm text-gray-400 mt-4">한동노무법인 | 대표 공인노무사 박실로</p>

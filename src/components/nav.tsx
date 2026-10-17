@@ -3,6 +3,9 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+// 모든 채널의 상담 진입점은 한동노무법인 카카오톡 채널 하나로 모은다.
+const KAKAO_CHAT_URL = 'https://pf.kakao.com/_VNJxlb/chat';
+
 export function Nav() {
   const [open, setOpen] = useState(false);
 
@@ -14,12 +17,19 @@ export function Nav() {
           <span className="font-bold text-lg text-gray-900">SilroGEO</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <Link href="/ai-consulting" className="text-sm text-gray-600 hover:text-blue-600 transition">AI경영진단</Link>
           <Link href="/aeo-geo" className="text-sm text-gray-600 hover:text-blue-600 transition">AEO/GEO</Link>
           <Link href="/diagnose" className="text-sm text-gray-600 hover:text-blue-600 transition">무료 진단</Link>
-          <a href="https://safety.silronomu.com/" target="_blank" rel="noreferrer" className="text-sm text-gray-600 hover:text-blue-600 transition">산업안전 지도 ↗</a>
-          <a href="tel:062-521-5678" className="text-sm bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition">상담 문의</a>
+          <a href="tel:010-9883-7268" className="text-sm text-gray-600 hover:text-blue-600 transition">전화 상담</a>
+          <a
+            href={KAKAO_CHAT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm bg-[#FEE500] text-[#191600] font-semibold px-4 py-2 rounded-full hover:bg-[#F2DA00] transition"
+          >
+            카카오톡 상담
+          </a>
         </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden p-2">
@@ -34,8 +44,16 @@ export function Nav() {
           <Link href="/ai-consulting" className="block py-3 text-gray-700" onClick={() => setOpen(false)}>AI경영진단</Link>
           <Link href="/aeo-geo" className="block py-3 text-gray-700" onClick={() => setOpen(false)}>AEO/GEO</Link>
           <Link href="/diagnose" className="block py-3 text-gray-700" onClick={() => setOpen(false)}>무료 진단</Link>
-          <a href="https://safety.silronomu.com/" target="_blank" rel="noreferrer" className="block py-3 text-gray-700" onClick={() => setOpen(false)}>산업안전 지도 ↗</a>
-          <a href="tel:062-521-5678" className="block py-3 text-blue-600 font-semibold">상담 문의</a>
+          <a href="tel:010-9883-7268" className="block py-3 text-gray-700 border-t border-gray-50">전화 상담</a>
+          <a
+            href={KAKAO_CHAT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 block rounded-full bg-[#FEE500] py-3 text-center font-semibold text-[#191600]"
+            onClick={() => setOpen(false)}
+          >
+            카카오톡 상담
+          </a>
         </div>
       )}
     </nav>
