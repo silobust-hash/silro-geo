@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { KakaoIcon } from '@/components/kakao-icon';
+import { Phone } from 'lucide-react';
 import { ScoreCard } from '@/components/score-card';
 import { ScoreBreakdown } from '@/components/score-breakdown';
 import { diagnoseAction } from './actions';
@@ -43,7 +45,7 @@ export default function DiagnosePage() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <Badge variant="secondary" className="mb-4 text-blue-600 bg-blue-50">무료 AEO/GEO 진단</Badge>
+          <Badge variant="secondary" className="mb-5 h-7 px-3 text-sm font-semibold text-blue-700 bg-blue-50">무료 AEO/GEO 진단</Badge>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             AI가 당신의 회사를 알고 있을까요?
           </h1>
@@ -55,13 +57,13 @@ export default function DiagnosePage() {
               placeholder="https://example.com"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              className="flex-1 px-6 py-4 rounded-full border border-gray-200 text-lg focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-sm"
+              className="flex-1 min-h-14 px-6 py-4 rounded-full border border-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-blue-300 shadow-sm"
               disabled={loading}
             />
             <button
               type="submit"
               disabled={loading || !url.trim()}
-              className="px-8 py-4 bg-blue-500 text-white rounded-full text-lg font-semibold hover:bg-blue-600 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-200"
+              className="btn btn-primary min-h-14 px-8 text-lg disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-600"
             >
               {loading ? '분석 중...' : '진단 시작'}
             </button>
@@ -74,7 +76,7 @@ export default function DiagnosePage() {
         <div className="py-20 text-center">
           <div className="inline-block w-12 h-12 border-4 border-blue-200 border-t-blue-500 rounded-full animate-spin mb-4" />
           <p className="text-gray-600 text-lg">사이트를 분석하고 있습니다...</p>
-          <p className="text-gray-400 text-sm mt-2">메타태그, Schema, 시맨틱 구조, 보안, 콘텐츠를 확인 중</p>
+          <p className="text-gray-600 text-sm mt-2">메타태그, Schema, 시맨틱 구조, 보안, 콘텐츠를 확인 중</p>
         </div>
       )}
 
@@ -153,11 +155,11 @@ export default function DiagnosePage() {
               <h3 className="text-xl font-bold mb-2">더 자세한 분석이 필요하신가요?</h3>
               <p className="text-gray-600 mb-6">AI 검색 노출을 본격적으로 개선하고 싶다면, 전문 컨설팅을 받아보세요.</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="https://pf.kakao.com/_VNJxlb/chat" target="_blank" className="bg-yellow-400 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">
-                  💬 카카오톡 상담
+                <a href="https://pf.kakao.com/_VNJxlb/chat" target="_blank" className="btn btn-kakao">
+                  <KakaoIcon /> 카카오톡 상담
                 </a>
-                <a href="tel:010-9883-7268" className="bg-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition">
-                  📞 전화 상담
+                <a href="tel:010-9883-7268" className="btn btn-primary">
+                  <Phone className="size-4" aria-hidden /> 전화 상담
                 </a>
               </div>
             </CardContent>

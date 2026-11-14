@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { KakaoIcon } from '@/components/kakao-icon';
+import { Phone } from 'lucide-react';
 
 const PAGE_URL = 'https://xn--hc0b21et01ao2a.com/ai-consulting';
 const PAGE_TITLE = 'AI경영진단 컨설팅';
@@ -25,10 +27,10 @@ export default function AIConsultingPage() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-purple-50 to-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="secondary" className="mb-4 text-purple-600 bg-purple-50">AI Management Consulting</Badge>
+          <Badge variant="secondary" className="mb-5 h-7 px-3 text-sm font-semibold text-purple-700 bg-purple-50">AI Management Consulting</Badge>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">AI경영진단 컨설팅</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            회사 전체 업무를 해부하여 AI로 맡길 수 있는 일과 사람이 해야 할 일을 구분하고,<br />개선방향과 구축전략까지 제안합니다.
+            회사 전체 업무를 해부하여 AI로 맡길 수 있는 일과 사람이 해야 할 일을 구분하고,{' '}<br className="hidden sm:block" />개선방향과 구축전략까지 제안합니다.
           </p>
         </div>
       </section>
@@ -45,7 +47,7 @@ export default function AIConsultingPage() {
               { icon: '🦺', name: '안전·보건' }, { icon: '💾', name: '데이터관리' },
               { icon: '🔍', name: 'AEO·GEO' }, { icon: '🤖', name: 'AI판정' },
             ].map(({ icon, name }) => (
-              <Card key={name} className="border-0 shadow-sm hover:shadow-md transition text-center">
+              <Card key={name} className="shadow-sm hover:shadow-md transition text-center">
                 <CardContent className="p-5">
                   <span className="text-3xl block mb-2">{icon}</span>
                   <span className="text-sm font-semibold text-gray-700">{name}</span>
@@ -72,7 +74,7 @@ export default function AIConsultingPage() {
                 <CardContent className="p-6 text-center">
                   <span className="text-4xl block mb-3">{icon}</span>
                   <h3 className={`font-bold mb-2 ${text}`}>{grade}</h3>
-                  <p className="text-sm text-gray-600">{desc}</p>
+                  <p className="text-base text-gray-600">{desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -94,13 +96,13 @@ export default function AIConsultingPage() {
               { step: 6, title: '개선안 및 구축 제안', period: '-', desc: '우선순위 로드맵, 단계별 실행계획, 견적 제안' },
             ].map(({ step, title, period, desc }) => (
               <div key={step} className="flex gap-4 items-start">
-                <div className="w-10 h-10 bg-purple-500 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">{step}</div>
+                <div className="w-10 h-10 bg-purple-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">{step}</div>
                 <div className="flex-1 pb-4 border-b border-gray-100">
                   <div className="flex items-center gap-3 mb-1">
                     <h3 className="font-bold">{title}</h3>
                     {period !== '-' && <Badge variant="outline" className="text-purple-600">{period}</Badge>}
                   </div>
-                  <p className="text-sm text-gray-500">{desc}</p>
+                  <p className="text-base text-gray-500">{desc}</p>
                 </div>
               </div>
             ))}
@@ -118,21 +120,21 @@ export default function AIConsultingPage() {
               { name: '설계형', period: '4~8주', price: '300~700만원', desc: '진단 + 업무 표준화 + AI 도입 설계', features: ['진단형 컨설팅 전 과정 포함', '업무 표준화 구조 설계', 'AI 도입 구조 설계', '우선순위 로드맵 수립', '실행계획서 제출'], popular: true },
               { name: '구축형', period: '1~3개월', price: '500~1,500만원', desc: '설계 + 자동화 구축 + 교육 + 안정화', features: ['설계형 컨설팅 전 과정 포함', '문서 자동화 템플릿 구축', 'AI 워크플로우 설계·구현', '직원 교육 (실무 사용법)', '초기 운영 지원 및 안정화'] },
             ].map((pkg) => (
-              <Card key={pkg.name} className={`relative ${pkg.popular ? 'border-purple-400 shadow-lg scale-105' : ''}`}>
-                {pkg.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><Badge className="bg-purple-500">추천</Badge></div>}
+              <Card key={pkg.name} className={`relative overflow-visible ${pkg.popular ? 'ring-2 ring-purple-600 shadow-md' : ''}`}>
+                {pkg.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><Badge className="h-6 bg-purple-600 px-3 font-semibold text-white">추천</Badge></div>}
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-1">{pkg.name}</h3>
                   <p className="text-sm text-gray-500 mb-1">{pkg.period}</p>
                   <p className="text-2xl font-bold text-purple-600 mb-2">{pkg.price}</p>
                   <p className="text-sm text-gray-500 mb-4">{pkg.desc}</p>
                   <ul className="space-y-2">
-                    {pkg.features.map(f => <li key={f} className="text-sm text-gray-600 flex gap-2"><span className="text-purple-400">→</span>{f}</li>)}
+                    {pkg.features.map(f => <li key={f} className="text-base text-gray-600 flex gap-2"><span className="text-purple-400">→</span>{f}</li>)}
                   </ul>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <p className="text-center text-sm text-gray-400 mt-8">* 월 유지관리: 50~200만원/월 (AI 시스템 점검, 업무 개선, 노출 관리, 리스크 점검)</p>
+          <p className="text-center text-sm text-gray-600 mt-8">* 월 유지관리: 50~200만원/월 (AI 시스템 점검, 업무 개선, 노출 관리, 리스크 점검)</p>
         </div>
       </section>
 
@@ -140,14 +142,14 @@ export default function AIConsultingPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-2">업무별 지원 범위</h2>
-          <p className="text-center text-xs text-gray-400 mb-10">업무에 맞춰 적용 범위를 정합니다. 절감 시간은 업무 건수·난이도·검수 시간을 맞춰 비교해야 하며, 특정 절감률을 보장하지 않습니다.</p>
+          <p className="mx-auto max-w-2xl text-center text-sm text-gray-600 mb-10">업무에 맞춰 적용 범위를 정합니다. 절감 시간은 업무 건수·난이도·검수 시간을 맞춰 비교해야 하며, 특정 절감률을 보장하지 않습니다.</p>
           <div className="overflow-x-auto">
             <table className="w-full bg-white rounded-xl shadow-sm overflow-hidden">
               <thead><tr className="bg-purple-50">
-                <th className="p-4 text-left text-sm font-semibold">항목</th>
-                <th className="p-4 text-left text-sm font-semibold">검토 대상</th>
-                <th className="p-4 text-left text-sm font-semibold">지원 방식</th>
-                <th className="p-4 text-left text-sm font-semibold">확인 기준</th>
+                <th className="px-3 py-3 sm:p-4 text-left align-top text-sm font-semibold text-gray-700">항목</th>
+                <th className="px-3 py-3 sm:p-4 text-left align-top text-sm font-semibold text-gray-700">검토 대상</th>
+                <th className="px-3 py-3 sm:p-4 text-left align-top text-sm font-semibold text-gray-700">지원 방식</th>
+                <th className="px-3 py-3 sm:p-4 text-left align-top text-sm font-semibold text-gray-700">확인 기준</th>
               </tr></thead>
               <tbody>
                 {[
@@ -157,11 +159,11 @@ export default function AIConsultingPage() {
                   ['리스크 점검', '점검 항목·주기', '확인 목록·알림 설계', '누락 여부·검토 기록'],
                   ['제안서·견적서', '요청 조건·산정 근거', '서식·초안 작성 보조', '계산 검산·검수시간'],
                 ].map(([item, before, after, effect]) => (
-                  <tr key={item} className="border-b border-gray-50">
-                    <td className="p-4 font-medium text-sm">{item}</td>
-                    <td className="p-4 text-sm text-red-500">{before}</td>
-                    <td className="p-4 text-sm text-green-600 font-semibold">{after}</td>
-                    <td className="p-4"><Badge variant="outline" className="text-purple-600">{effect}</Badge></td>
+                  <tr key={item} className="border-b border-gray-100 last:border-0 align-top">
+                    <td className="px-3 py-3 sm:p-4 text-sm font-semibold text-gray-900">{item}</td>
+                    <td className="px-3 py-3 sm:p-4 text-sm text-gray-700">{before}</td>
+                    <td className="px-3 py-3 sm:p-4 text-sm text-gray-900">{after}</td>
+                    <td className="px-3 py-3 sm:p-4 text-sm font-medium text-purple-700">{effect}</td>
                   </tr>
                 ))}
               </tbody>
@@ -183,7 +185,7 @@ export default function AIConsultingPage() {
               '노무·안전·운영 리스크를 함께 줄이고 싶은 곳',
             ].map((text) => (
               <div key={text} className="flex gap-3 items-center p-4 bg-purple-50 rounded-xl">
-                <span className="text-purple-500 text-lg">✓</span>
+                <span className="text-purple-700 text-lg">✓</span>
                 <span className="text-gray-700">{text}</span>
               </div>
             ))}
@@ -194,15 +196,15 @@ export default function AIConsultingPage() {
       {/* CTA */}
       <section className="py-16 px-4">
         <div className="max-w-xl mx-auto text-center">
-          <Card className="border-0 shadow-xl">
-            <CardContent className="p-10">
+          <Card className="shadow-md">
+            <CardContent className="p-6 sm:p-10">
               <h2 className="text-2xl font-bold mb-2">무료 사전 상담</h2>
               <p className="text-gray-500 mb-6">회사 현황을 간단히 듣고, 적합한 패키지를 안내드립니다.</p>
               <div className="flex flex-col gap-3">
-                <a href="https://pf.kakao.com/_VNJxlb/chat" target="_blank" className="bg-yellow-400 text-gray-900 py-4 rounded-full font-semibold hover:bg-yellow-300 transition">💬 카카오톡 상담</a>
-                <a href="tel:062-521-5678" className="bg-purple-500 text-white py-4 rounded-full font-semibold hover:bg-purple-600 transition">📞 062-521-5678</a>
+                <a href="https://pf.kakao.com/_VNJxlb/chat" target="_blank" className="btn btn-kakao"><KakaoIcon /> 카카오톡 상담</a>
+                <a href="tel:062-521-5678" className="btn bg-purple-600 text-white hover:bg-purple-700"><Phone className="size-4" aria-hidden /> 062-521-5678</a>
               </div>
-              <p className="text-sm text-gray-400 mt-4">한동노무법인 | 대표 공인노무사 박실로</p>
+              <p className="text-sm text-gray-600 mt-4">한동노무법인 | 대표 공인노무사 박실로</p>
             </CardContent>
           </Card>
         </div>

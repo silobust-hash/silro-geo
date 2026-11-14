@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ConsultationForm } from '@/components/consultation-form';
+import { KakaoIcon } from '@/components/kakao-icon';
+import { Building2, HardHat, Hospital, Mail, MapPin, Phone, Search } from 'lucide-react';
 
 const SITE_URL = 'https://xn--hc0b21et01ao2a.com';
 const SITE_TITLE = 'SilroGEO | 박실로 노무사의 AI 검색노출·업무화';
@@ -35,30 +37,32 @@ export default function HomePage() {
   return (
     <div className="bg-gray-50">
       {/* Hero */}
-      <section className="relative bg-gradient-to-b from-blue-50 to-white py-24 px-4">
+      <section className="relative bg-gradient-to-b from-blue-50 to-white py-16 sm:py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="secondary" className="mb-4 text-blue-600 bg-blue-50">한동노무법인 박실로 노무사</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            AI에게 일을 맡기고,<br />AI에게 더 자주 추천받게.
+          <Badge variant="secondary" className="mb-5 h-7 bg-white px-3 text-sm font-semibold text-blue-700 ring-1 ring-blue-200">한동노무법인 박실로 노무사</Badge>
+          <h1 className="text-[2rem] sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            AI에게 일을 맡기고,{' '}<br className="hidden sm:block" />AI에게 더 자주 추천받게.
           </h1>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            2026년 4월 1일부터 직접 부딪히며 배우고,<br />
+            2026년 4월 1일부터 직접 부딪히며 배우고,{' '}<br className="hidden sm:block" />
             고치고, 다시 실험한 박실로 노무사의 경험을 전해드립니다.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#consultation" className="bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 transition shadow-lg shadow-blue-200">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="#consultation" className="btn btn-primary sm:text-lg">
               상담글 남기기
             </a>
-            <Link href="/diagnose" className="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-blue-300 hover:text-blue-600 transition">
+            <Link href="/diagnose" className="btn btn-secondary sm:text-lg">
               무료 AI 진단 시작
             </Link>
-            <a href="https://silronomu.com" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-200 bg-white text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-blue-300 hover:text-blue-600 transition">
+          </div>
+          <p className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-1">
+            <a href="https://silronomu.com" target="_blank" rel="noopener noreferrer" className="link-quiet">
               박실로 노무사 소개
             </a>
-            <a href="https://xn--2q1bm94d.com" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-200 bg-white text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-blue-300 hover:text-blue-600 transition">
+            <a href="https://xn--2q1bm94d.com" target="_blank" rel="noopener noreferrer" className="link-quiet">
               한동.com 공식 홈페이지
             </a>
-          </div>
+          </p>
         </div>
       </section>
 
@@ -67,19 +71,19 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl rounded-2xl bg-white p-7 shadow-sm sm:p-9">
           <Badge variant="secondary" className="mb-4 bg-blue-50 text-blue-600">전국 노동정보</Badge>
           <h2 className="text-2xl font-bold text-gray-900">박실로 공인노무사가 검수하는 AI노무사</h2>
-          <p className="mt-4 leading-relaxed text-gray-600">
+          <p className="mt-4 max-w-2xl leading-relaxed text-gray-600">
             AI노무사는 한동노무법인이 운영하고 박실로 공인노무사가 공개 답변을 검수하는 전국 노동정보 브랜드입니다.
             산재보상, 중대재해 대응, 직장 내 괴롭힘 등 현장 질문을 공식 근거와 함께 정리합니다. 개별 사건의 판단과
             수임 여부는 사실관계와 위임 범위를 확인한 공인노무사가 별도로 결정합니다.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="https://ai-nomusa.kr/" className="rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
+            <a href="https://ai-nomusa.kr/" className="btn btn-sm border border-blue-600 bg-white text-blue-700 hover:bg-blue-50">
               AI노무사 공식 사이트
             </a>
-            <a href="https://ai-nomusa.kr/answers/ai-nomusa-role/" className="rounded-full border border-blue-200 px-5 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-50">
+            <a href="https://ai-nomusa.kr/answers/ai-nomusa-role/" className="btn btn-sm btn-outline-blue">
               AI노무사의 역할과 한계
             </a>
-            <a href="https://ai-nomusa.kr/guides/" className="rounded-full border border-blue-200 px-5 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-50">
+            <a href="https://ai-nomusa.kr/guides/" className="btn btn-sm btn-outline-blue">
               전국 노무사 선택 가이드
             </a>
           </div>
@@ -87,7 +91,7 @@ export default function HomePage() {
       </section>
 
       {/* Consultation */}
-      <section className="bg-white px-4 py-20" id="consultation">
+      <section className="bg-white px-4 py-14 sm:py-20" id="consultation">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <Badge variant="secondary" className="mb-4 text-blue-600 bg-blue-50">박실로 노무사의 실제 경험</Badge>
@@ -105,7 +109,7 @@ export default function HomePage() {
                 그 경험을 바탕으로 귀사의 홈페이지와 콘텐츠가 인공지능 검색에서 어떻게 보일 수 있는지 함께 살펴드리겠습니다.
               </p>
             </div>
-            <div className="mt-8 grid gap-3 text-sm text-gray-600 sm:grid-cols-3">
+            <div className="mt-8 grid gap-3 text-base text-gray-600 sm:grid-cols-3">
               <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
                 <p className="font-semibold text-gray-900">상담글 검토</p>
                 <p className="mt-1">남겨주신 고민을 먼저 읽습니다.</p>
@@ -123,12 +127,12 @@ export default function HomePage() {
               href="https://silronomu.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex rounded-full border border-blue-200 px-5 py-3 text-sm font-semibold text-blue-600 transition hover:border-blue-300 hover:bg-blue-50"
+              className="mt-6 btn btn-sm btn-outline-blue"
             >
               박실로 노무사 개인 홈페이지 보기
             </a>
           </div>
-          <Card className="border-0 shadow-xl">
+          <Card className="shadow-md">
             <CardContent className="p-6 sm:p-8">
               <ConsultationForm
                 source="homepage-consultation"
@@ -141,15 +145,15 @@ export default function HomePage() {
       </section>
 
       {/* Two Services */}
-      <section className="py-20 px-4">
+      <section className="py-14 sm:py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-center text-sm font-semibold text-blue-500 mb-2 tracking-widest uppercase">Services</p>
+          <p className="text-center text-sm font-semibold text-blue-700 mb-2 tracking-widest uppercase">Services</p>
           <h2 className="text-3xl font-bold text-center mb-12">2가지 핵심 서비스</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <Link href="/ai-consulting">
-              <Card className="h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-0 shadow-md cursor-pointer">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-2xl mb-5">🏢</div>
+            <Link href="/ai-consulting" className="block rounded-xl">
+              <Card className="h-full shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                <CardContent className="p-6 sm:p-8">
+                  <span className="mb-5 flex size-11 items-center justify-center rounded-xl bg-purple-50 text-purple-700"><Building2 className="size-5" strokeWidth={1.75} aria-hidden /></span>
                   <h3 className="text-xl font-bold mb-3">AI경영진단 컨설팅</h3>
                   <p className="text-gray-600 leading-relaxed mb-4">회사 전체 업무를 해부하여 AI로 맡길 수 있는 일과 사람이 해야 할 일을 구분하고, 자동화 구축까지 지원합니다.</p>
                   <div className="flex flex-wrap gap-2">
@@ -160,10 +164,10 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             </Link>
-            <Link href="/aeo-geo">
-              <Card className="h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-0 shadow-md cursor-pointer">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl mb-5">🔍</div>
+            <Link href="/aeo-geo" className="block rounded-xl">
+              <Card className="h-full shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                <CardContent className="p-6 sm:p-8">
+                  <span className="mb-5 flex size-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700"><Search className="size-5" strokeWidth={1.75} aria-hidden /></span>
                   <h3 className="text-xl font-bold mb-3">AEO/GEO 최적화</h3>
                   <p className="text-gray-600 leading-relaxed mb-4">ChatGPT, Gemini, Perplexity 등 AI 검색에서 귀사가 더 자주 추천되도록 콘텐츠와 구조를 최적화합니다.</p>
                   <div className="flex flex-wrap gap-2">
@@ -185,33 +189,33 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-center mb-4">산업별 가이드</h2>
           <p className="text-center text-gray-500 mb-12">귀사 업종에 맞는 AI 도입 사례와 노무 포인트를 확인해보세요.</p>
           <div className="grid md:grid-cols-3 gap-6">
-            <Link href="/for/hospital">
-              <Card className="h-full border-0 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">
+            <Link href="/for/hospital" className="block rounded-xl">
+              <Card className="h-full shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
                 <CardContent className="p-6">
-                  <div className="text-3xl mb-3">🏥</div>
+                  <span className="mb-4 flex size-11 items-center justify-center rounded-xl bg-gray-100 text-gray-700"><Hospital className="size-5" strokeWidth={1.75} aria-hidden /></span>
                   <h3 className="font-bold text-lg mb-2">병원·의원</h3>
                   <p className="text-sm text-gray-500 mb-3">의원·종합·요양·한의원</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">교대근무·당직수당·요양보호사 처우개선비까지 AI로 정리.</p>
+                  <p className="text-base text-gray-600 leading-relaxed">교대근무·당직수당·요양보호사 처우개선비까지 AI로 정리.</p>
                 </CardContent>
               </Card>
             </Link>
-            <Link href="/for/construction">
-              <Card className="h-full border-0 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">
+            <Link href="/for/construction" className="block rounded-xl">
+              <Card className="h-full shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
                 <CardContent className="p-6">
-                  <div className="text-3xl mb-3">🏗️</div>
+                  <span className="mb-4 flex size-11 items-center justify-center rounded-xl bg-gray-100 text-gray-700"><HardHat className="size-5" strokeWidth={1.75} aria-hidden /></span>
                   <h3 className="font-bold text-lg mb-2">건설현장</h3>
                   <p className="text-sm text-gray-500 mb-3">종합건설·전문건설</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">중처법 대응, 일용직 임금, 위험성평가를 통합 자동화.</p>
+                  <p className="text-base text-gray-600 leading-relaxed">중처법 대응, 일용직 임금, 위험성평가를 통합 자동화.</p>
                 </CardContent>
               </Card>
             </Link>
-            <Link href="/for/sme">
-              <Card className="h-full border-0 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer">
+            <Link href="/for/sme" className="block rounded-xl">
+              <Card className="h-full shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
                 <CardContent className="p-6">
-                  <div className="text-3xl mb-3">🏢</div>
+                  <span className="mb-4 flex size-11 items-center justify-center rounded-xl bg-gray-100 text-gray-700"><Building2 className="size-5" strokeWidth={1.75} aria-hidden /></span>
                   <h3 className="font-bold text-lg mb-2">중소기업·스타트업</h3>
                   <p className="text-sm text-gray-500 mb-3">일반 중소기업</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">대표 1인 운영을 벗어나 체계와 AI 자동화를 동시에.</p>
+                  <p className="text-base text-gray-600 leading-relaxed">대표 1인 운영을 벗어나 체계와 AI 자동화를 동시에.</p>
                 </CardContent>
               </Card>
             </Link>
@@ -220,20 +224,20 @@ export default function HomePage() {
       </section>
 
       {/* Free Diagnosis CTA */}
-      <section className="py-20 px-4 bg-blue-500">
+      <section className="py-14 sm:py-20 px-4 bg-blue-600">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-4">AI가 당신의 회사를 알고 있을까요?</h2>
-          <p className="text-blue-100 text-lg mb-8">URL을 입력하면 30초 만에 AI 검색 노출 현황을 분석해드립니다.</p>
-          <Link href="/diagnose" className="inline-block bg-white text-blue-600 px-10 py-4 rounded-full text-lg font-bold hover:bg-blue-50 transition shadow-xl">
+          <p className="text-blue-50 text-lg mb-8">URL을 입력하면 30초 만에 AI 검색 노출 현황을 분석해드립니다.</p>
+          <Link href="/diagnose" className="btn bg-white px-10 text-lg font-bold text-blue-700 hover:bg-blue-50">
             무료 진단 시작 →
           </Link>
         </div>
       </section>
 
       {/* AI경영진단 Packages */}
-      <section className="py-20 px-4">
+      <section className="py-14 sm:py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <p className="text-center text-sm font-semibold text-purple-500 mb-2 tracking-widest uppercase">AI Consulting</p>
+          <p className="text-center text-sm font-semibold text-purple-700 mb-2 tracking-widest uppercase">AI Consulting</p>
           <h2 className="text-3xl font-bold text-center mb-4">AI경영진단 컨설팅</h2>
           <p className="text-center text-gray-500 mb-12">회사 규모와 니즈에 맞는 패키지를 선택하세요</p>
           <div className="grid md:grid-cols-3 gap-6">
@@ -242,14 +246,14 @@ export default function HomePage() {
               { name: '설계형', period: '4~8주', price: '300~700만원', features: ['진단형 전 과정 포함', '업무 표준화 설계', 'AI 도입 구조 설계', '우선순위 로드맵', '실행계획서'], popular: true },
               { name: '구축형', period: '1~3개월', price: '500~1,500만원', features: ['설계형 전 과정 포함', '문서 자동화 구축', 'AI 워크플로우 구현', '직원 교육', '초기 운영 안정화'] },
             ].map((pkg) => (
-              <Card key={pkg.name} className={`relative ${pkg.popular ? 'border-purple-400 shadow-lg scale-105' : 'border-gray-200'}`}>
-                {pkg.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><Badge className="bg-purple-500">추천</Badge></div>}
+              <Card key={pkg.name} className={`relative overflow-visible ${pkg.popular ? 'ring-2 ring-purple-600 shadow-md' : ''}`}>
+                {pkg.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><Badge className="h-6 bg-purple-600 px-3 font-semibold text-white">추천</Badge></div>}
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-1">{pkg.name}</h3>
                   <p className="text-sm text-gray-500 mb-3">{pkg.period}</p>
                   <p className="text-2xl font-bold text-purple-600 mb-5">{pkg.price}</p>
                   <ul className="space-y-2">
-                    {pkg.features.map(f => <li key={f} className="text-sm text-gray-600 flex gap-2"><span className="text-purple-400">→</span>{f}</li>)}
+                    {pkg.features.map(f => <li key={f} className="text-base text-gray-600 flex gap-2"><span className="text-purple-400">→</span>{f}</li>)}
                   </ul>
                 </CardContent>
               </Card>
@@ -259,9 +263,9 @@ export default function HomePage() {
       </section>
 
       {/* AEO/GEO Packages */}
-      <section className="py-20 px-4 bg-gray-100">
+      <section className="py-14 sm:py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <p className="text-center text-sm font-semibold text-blue-500 mb-2 tracking-widest uppercase">AEO/GEO</p>
+          <p className="text-center text-sm font-semibold text-blue-700 mb-2 tracking-widest uppercase">AEO/GEO</p>
           <h2 className="text-3xl font-bold text-center mb-4">AEO/GEO 최적화</h2>
           <p className="text-center text-gray-500 mb-12">AI가 당신을 추천하게 만드는 서비스</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -271,13 +275,13 @@ export default function HomePage() {
               { name: 'Pro', price: '월 150만원', features: ['키워드 30개', '격주 측정', '콘텐츠 월 4건', '경쟁사 분석', 'Schema 고급'], popular: true },
               { name: 'Enterprise', price: '월 300만원', features: ['키워드 100개+', '주간 측정', '콘텐츠 월 12건+', '실시간 대시보드', '카테고리 독점'] },
             ].map((pkg) => (
-              <Card key={pkg.name} className={`relative ${pkg.popular ? 'border-blue-400 shadow-lg' : 'border-gray-200'}`}>
-                {pkg.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><Badge className="bg-blue-500">인기</Badge></div>}
+              <Card key={pkg.name} className={`relative overflow-visible ${pkg.popular ? 'ring-2 ring-blue-600 shadow-md' : ''}`}>
+                {pkg.popular && <div className="absolute -top-3 left-1/2 -translate-x-1/2"><Badge className="h-6 bg-blue-600 px-3 font-semibold text-white">인기</Badge></div>}
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold mb-1">{pkg.name}</h3>
                   <p className="text-2xl font-bold text-blue-600 mb-4">{pkg.price}</p>
                   <ul className="space-y-2">
-                    {pkg.features.map(f => <li key={f} className="text-sm text-gray-600 flex gap-2"><span className="text-blue-400">→</span>{f}</li>)}
+                    {pkg.features.map(f => <li key={f} className="text-base text-gray-600 flex gap-2"><span className="text-blue-400">→</span>{f}</li>)}
                   </ul>
                 </CardContent>
               </Card>
@@ -287,17 +291,17 @@ export default function HomePage() {
       </section>
 
       {/* Support scope */}
-      <section className="py-20 px-4">
+      <section className="py-14 sm:py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-2">업무별 지원 범위</h2>
-          <p className="text-center text-xs text-gray-400 mb-10">업무에 맞춰 적용 범위를 정합니다. 절감 시간은 업무 건수·난이도·검수 시간을 맞춰 비교하고, AI 노출·인용은 서비스별 실제 응답으로 확인합니다.</p>
+          <p className="mx-auto max-w-2xl text-center text-sm text-gray-600 mb-10">업무에 맞춰 적용 범위를 정합니다. 절감 시간은 업무 건수·난이도·검수 시간을 맞춰 비교하고, AI 노출·인용은 서비스별 실제 응답으로 확인합니다.</p>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse bg-white rounded-xl shadow-sm overflow-hidden">
               <thead><tr className="bg-blue-50">
-                <th className="p-4 text-left text-sm font-semibold">항목</th>
-                <th className="p-4 text-left text-sm font-semibold">검토 대상</th>
-                <th className="p-4 text-left text-sm font-semibold">지원 방식</th>
-                <th className="p-4 text-left text-sm font-semibold">확인 기준</th>
+                <th className="px-3 py-3 sm:p-4 text-left align-top text-sm font-semibold text-gray-700">항목</th>
+                <th className="px-3 py-3 sm:p-4 text-left align-top text-sm font-semibold text-gray-700">검토 대상</th>
+                <th className="px-3 py-3 sm:p-4 text-left align-top text-sm font-semibold text-gray-700">지원 방식</th>
+                <th className="px-3 py-3 sm:p-4 text-left align-top text-sm font-semibold text-gray-700">확인 기준</th>
               </tr></thead>
               <tbody>
                 {[
@@ -307,11 +311,11 @@ export default function HomePage() {
                   ['보고자료 작성', '원자료·보고 목적', '요약 초안 보조', '정확성·수정시간'],
                   ['리스크 점검', '점검 항목·주기', '확인 목록·알림 설계', '누락 여부·검토 기록'],
                 ].map(([item, before, after, effect]) => (
-                  <tr key={item} className="border-b border-gray-50 hover:bg-gray-50">
-                    <td className="p-4 font-medium text-sm">{item}</td>
-                    <td className="p-4 text-sm text-red-500">{before}</td>
-                    <td className="p-4 text-sm text-green-600 font-semibold">{after}</td>
-                    <td className="p-4"><Badge variant="outline" className="text-blue-600">{effect}</Badge></td>
+                  <tr key={item} className="border-b border-gray-100 last:border-0 align-top hover:bg-gray-50">
+                    <td className="px-3 py-3 sm:p-4 text-sm font-semibold text-gray-900">{item}</td>
+                    <td className="px-3 py-3 sm:p-4 text-sm text-gray-700">{before}</td>
+                    <td className="px-3 py-3 sm:p-4 text-sm text-gray-900">{after}</td>
+                    <td className="px-3 py-3 sm:p-4 text-sm font-medium text-blue-700">{effect}</td>
                   </tr>
                 ))}
               </tbody>
@@ -321,7 +325,7 @@ export default function HomePage() {
       </section>
 
       {/* Process */}
-      <section className="py-20 px-4 bg-gray-100">
+      <section className="py-14 sm:py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">진행 프로세스</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -332,15 +336,14 @@ export default function HomePage() {
               { step: '04', title: 'AEO/GEO 진단', desc: 'AI 검색 노출, 구조화 데이터, 경쟁사 비교', icon: '📊' },
               { step: '05', title: '보고서 작성', desc: '종합 진단, 개선과제, 우선순위 매트릭스', icon: '📑' },
               { step: '06', title: '구축·실행', desc: '자동화 구현, 교육, 운영 안정화', icon: '🚀' },
-            ].map(({ step, title, desc, icon }) => (
-              <Card key={step} className="border-0 shadow-sm">
+            ].map(({ step, title, desc }) => (
+              <Card key={step} className="shadow-sm">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-2xl">{icon}</span>
-                    <Badge variant="secondary" className="text-blue-600">{step}</Badge>
+                    <span className="flex size-9 items-center justify-center rounded-full bg-blue-50 text-sm font-semibold text-blue-700">{step}</span>
                   </div>
                   <h3 className="font-bold mb-1">{title}</h3>
-                  <p className="text-sm text-gray-500">{desc}</p>
+                  <p className="text-base text-gray-500">{desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -349,50 +352,34 @@ export default function HomePage() {
       </section>
 
       {/* Contact */}
-      <section className="py-20 px-4" id="contact">
+      <section className="py-14 sm:py-20 px-4" id="contact">
         <div className="max-w-xl mx-auto">
-          <Card className="border-0 shadow-xl">
-            <CardContent className="p-10 text-center">
+          <Card className="shadow-md">
+            <CardContent className="p-6 sm:p-10 text-center">
               <h2 className="text-2xl font-bold mb-2">상담·자문·강의 문의</h2>
               <p className="text-gray-500 mb-8">편하게 연락 주세요.</p>
               <div className="space-y-4 mb-8">
-                <div className="flex items-center justify-center gap-3 p-4 bg-gray-50 rounded-xl">
-                  <span>📞</span><a href="tel:062-521-5678" className="font-medium hover:text-blue-600">062-521-5678</a>
+                <div className="flex min-h-14 items-center justify-center gap-3 rounded-xl bg-gray-50 px-4">
+                  <Phone className="size-4 text-gray-500" aria-hidden /><a href="tel:062-521-5678" className="inline-flex min-h-11 items-center font-medium hover:text-blue-700">062-521-5678</a>
                 </div>
-                <div className="flex items-center justify-center gap-3 p-4 bg-gray-50 rounded-xl">
-                  <span>📧</span><span className="font-medium">5215678@naver.com</span>
+                <div className="flex min-h-14 items-center justify-center gap-3 rounded-xl bg-gray-50 px-4">
+                  <Mail className="size-4 text-gray-500" aria-hidden /><span className="font-medium">5215678@naver.com</span>
                 </div>
-                <div className="flex items-center justify-center gap-3 p-4 bg-gray-50 rounded-xl">
-                  <span>📍</span><span className="font-medium">광주·전남 중심 전국 대응</span>
+                <div className="flex min-h-14 items-center justify-center gap-3 rounded-xl bg-gray-50 px-4">
+                  <MapPin className="size-4 text-gray-500" aria-hidden /><span className="font-medium">광주·전남 중심 전국 대응</span>
                 </div>
               </div>
               <div className="flex flex-col gap-3">
-                <a href="https://pf.kakao.com/_VNJxlb/chat" target="_blank" className="bg-yellow-400 text-gray-900 py-4 rounded-full font-semibold hover:bg-yellow-300 transition">💬 카카오톡 상담</a>
-                <a href="mailto:5215678@naver.com" className="border border-gray-200 py-4 rounded-full font-semibold text-gray-700 hover:bg-gray-50 transition">📧 이메일 보내기</a>
+                <a href="https://pf.kakao.com/_VNJxlb/chat" target="_blank" className="btn btn-kakao"><KakaoIcon /> 카카오톡 상담</a>
+                <a href="mailto:5215678@naver.com" className="btn btn-secondary"><Mail className="size-4" aria-hidden /> 이메일 보내기</a>
               </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      <section className="border-t border-blue-100 bg-white px-4 py-12"><div className="mx-auto max-w-4xl"><p className="text-sm font-semibold text-blue-600">기업자문 인사이트</p><h2 className="mt-3 text-xl font-bold text-gray-900"><a href="/notes/corporate-advisory-20261009.html" className="underline underline-offset-4 hover:text-blue-600">검색되는 전문성은 실제 자문업무와 연결돼야 합니다</a></h2><p className="mt-3 leading-relaxed text-gray-600">“기업자문 노무사”라는 검색어로 기업 담당자가 찾아왔다면, 그다음에는 어떤 업무를 지원하고 무엇을 준비해야 하는지 명확하게 안내해야 합니다.</p></div></section>
+      <section className="border-t border-blue-100 bg-white px-4 py-12"><div className="mx-auto max-w-4xl"><p className="text-sm font-semibold text-blue-600">기업자문 인사이트</p><h2 className="mt-3 text-xl font-bold text-gray-900"><a href="/notes/corporate-advisory-20261009.html" className="underline underline-offset-4 hover:text-blue-600">검색되는 전문성은 실제 자문업무와 연결돼야 합니다</a></h2><p className="mt-3 max-w-2xl leading-relaxed text-gray-600">“기업자문 노무사”라는 검색어로 기업 담당자가 찾아왔다면, 그다음에는 어떤 업무를 지원하고 무엇을 준비해야 하는지 명확하게 안내해야 합니다.</p></div></section>
 
-      {/* Footer */}
-      <footer className="py-10 px-4 border-t text-center text-sm text-gray-400">
-        <p className="mb-1">한동노무법인 | 대표 공인노무사 박실로</p>
-        <p className="mb-3">
-          <a href="https://silronomu.com" className="hover:text-blue-500">박실로 노무사 개인 홈페이지</a>{' · '}
-          <a href="https://xn--2q1bm94d.com" className="hover:text-blue-500">한동.com 공식 홈페이지</a>{' · '}
-          <a href="https://xn--2q1bm94d.com/members" className="hover:text-blue-500">박실로 구성원 소개</a>{' · '}
-          <a href="https://www.threads.net/@silrobag" className="hover:text-blue-500">@silrobag</a>{' · '}
-          <a href="https://silropanda.com/" className="hover:text-blue-500">실로판다 전문서비스몰</a>
-        </p>
-        <p className="mb-3">
-          <Link href="/privacy" className="hover:text-blue-500">개인정보처리방침</Link>{' · '}
-          <Link href="/terms" className="hover:text-blue-500">이용약관</Link>
-        </p>
-        <p>© 2026 SilroGEO. All rights reserved.</p>
-      </footer>
     </div>
   );
 }

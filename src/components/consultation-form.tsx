@@ -87,7 +87,7 @@ export function ConsultationForm({
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
         <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-gray-500">{description}</p>
+        <p className="mt-2 text-base leading-relaxed text-gray-600">{description}</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -98,6 +98,7 @@ export function ConsultationForm({
             value={name}
             onChange={(event) => setName(event.target.value)}
             placeholder="성함을 입력해주세요"
+            className="h-11"
             disabled={submitting}
           />
         </div>
@@ -109,6 +110,7 @@ export function ConsultationForm({
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="email@example.com"
+            className="h-11"
             disabled={submitting}
           />
         </div>
@@ -122,6 +124,7 @@ export function ConsultationForm({
             value={company}
             onChange={(event) => setCompany(event.target.value)}
             placeholder="회사명 또는 브랜드명"
+            className="h-11"
             disabled={submitting}
           />
         </div>
@@ -132,6 +135,7 @@ export function ConsultationForm({
             value={websiteUrl}
             onChange={(event) => setWebsiteUrl(event.target.value)}
             placeholder="https://example.com"
+            className="h-11"
             disabled={submitting}
           />
         </div>
@@ -145,16 +149,17 @@ export function ConsultationForm({
           onChange={(event) => setMessage(event.target.value)}
           placeholder="현재 고민, 확인받고 싶은 검색어, 홈페이지나 블로그 상황을 편하게 적어주세요."
           rows={6}
+          className="min-h-32"
           disabled={submitting}
         />
       </div>
 
-      <label className="flex items-start gap-2 text-left text-xs leading-relaxed text-gray-500">
+      <label className="flex items-start gap-3 text-left text-sm leading-relaxed text-gray-600">
         <input
           type="checkbox"
           checked={agreed}
           onChange={(event) => setAgreed(event.target.checked)}
-          className="mt-1"
+          className="mt-0.5 size-5 shrink-0 accent-blue-600"
           disabled={submitting}
         />
         <span>
@@ -168,7 +173,7 @@ export function ConsultationForm({
 
       {error && <p className="text-sm text-red-500">{error}</p>}
 
-      <Button type="submit" className="h-12 w-full text-base" disabled={submitting}>
+      <Button type="submit" className="h-12 w-full rounded-full bg-blue-600 text-base font-semibold text-white hover:bg-blue-700" disabled={submitting}>
         {submitting ? '전송 중...' : submitLabel}
       </Button>
     </form>

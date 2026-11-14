@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { KakaoConsultButton } from '@/components/kakao-consult-button';
+import { SiteFooter } from '@/components/site-footer';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -286,6 +287,7 @@ export default function RootLayout({
         />
         <Nav />
         <main className="flex-1 pt-16">{children}</main>
+        <SiteFooter />
         <KakaoConsultButton />
       </body>
     </html>
